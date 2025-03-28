@@ -16,7 +16,7 @@ a {
 
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
 
 }
 
@@ -58,12 +58,12 @@ img {
 .menuContainer{
   margin-top: 20px;
   background-color: brown;
-
+  border: 7px solid black;
   display: flex;
   flex-direction: column;
   width: 800px;
   height: 500px;
-  border: 7px solid black;
+
   
   align-items: center;
 }
@@ -229,3 +229,19 @@ img {
   margin: 8px;
 
 }
+
+
+.aboutContainer {
+
+  margin-top: 20px;
+  background-color: brown;
+  border: 7px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 300px;
+
+  
+  align-items: center;
+}
+
