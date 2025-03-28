@@ -1,17 +1,33 @@
 import "./styles.css";
 import { firstPage } from "./firstPage.js";
+import { secondPage } from "./secondPage";
+import { thirdPage } from "./thirdPage.js";
 
-// O código dentro da função só será executado quando o HTML estiver pronto
+// o código dentro da função só será executado quando o HTML estiver pronto
+const content = document.querySelector(".content");
+
+
+function clearContent() {
+    content.innerHTML = ""; // Remove todos os filhos do elemento ".content"
+  }
 document.addEventListener("DOMContentLoaded", () => {
-  // Chama a função para preencher o conteúdo inicial
-  firstPage();
+    // Carrega a primeira página ao carregar o DOM
+    firstPage();
+  
+    // Seleciona o botão "menu" após o DOM estar pronto
+    const menu = document.querySelector(".menu");
+    const about = document.querySelector(".about");
+  
+    // Adiciona um evento de clique ao botão "menu"
+    menu.addEventListener("click", () => {
+      clearContent(); // Remove todo o conteúdo atual
+      secondPage();   // Carrega o conteúdo da segunda página
+    });
 
-  // Seleciona o botão "menu" após o DOM estar carregado
-  const menu = document.querySelector(".Menu");
-
-  // Adiciona um evento de clique ao botão "menu"
-  menu.addEventListener("click", async () => {
-    const { secondPage } = await import("./secondPage.js"); // Importação dinâmica
-    secondPage(); // Chama a função para preencher o <div id="content">
+    about.addEventListener("click", () => {
+        clearContent(); // Remove todo o conteúdo atual
+        thirdPage();   // Carrega o conteúdo da segunda página
+      });
   });
-});
+  
+  // Função para limpar o conteúdo do elemento ".content"
